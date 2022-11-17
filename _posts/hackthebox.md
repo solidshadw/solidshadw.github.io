@@ -1,6 +1,6 @@
 ---
 title: TITLE
-date: 2022-11-17 08:50:00 -500
+date: 2022-11-17 10:50:00 -0500
 categories: [hackthebox, machines]
 tags: [hacking,hackthebox]     # TAG names should always be lowercase
 ---
