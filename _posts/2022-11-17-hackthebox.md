@@ -1,7 +1,7 @@
 ---
-title: TITLE
-date: 2022-11-17 10:50:00 -0500
-categories: [hackthebox, machines]
+title: Hack The Box - Challenge Name
+date: 2022-11-17 14:30:00 -0500
+categories: [HackTheBox, Machines]
 tags: [hacking,hackthebox]     # TAG names should always be lowercase
 ---
 
