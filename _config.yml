@@ -81,7 +81,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: 'https://twitter.com/solidshadw/photo'
+avatar: 'https://pbs.twimg.com/profile_images/1595991454148661249/W8uNHpFA_400x400.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
