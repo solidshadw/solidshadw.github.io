@@ -36,7 +36,7 @@ copyright:
 
   # Displayed in the footer
   brief: Some rights reserved.
-  verbose: >-x
+  verbose: >-
     The opinions expressed in this blog are my own and do not reflect the views of my employers.
 
 meta: Powered by :PLATFORM with :THEME theme.
