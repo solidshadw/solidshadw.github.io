@@ -21,7 +21,7 @@ timezone: America/Denver
 
 title: solidshadw                          # the main title
 
-tagline: Passion for testing computers security  # it will display as the sub-title
+tagline: Passion for testing computer security  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Passion for testing computers security
