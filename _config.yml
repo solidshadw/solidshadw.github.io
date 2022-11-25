@@ -24,7 +24,7 @@ title: solidshadw                          # the main title
 tagline: Passion for testing computers security  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-Passion for testing computers security
+  Passion for testing computers security
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://solidshadw.github.io'
@@ -81,7 +81,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://pbs.twimg.com/profile_images/1375954424774848512/qexEPSw8_400x400.jpg
+avatar: 'https://pbs.twimg.com/profile_images/1375954424774848512/qexEPSw8_400x400.jpg'
 
 # boolean type, the global switch for ToC in posts.
 toc: true
