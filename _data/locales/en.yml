@@ -36,9 +36,8 @@ copyright:
 
   # Displayed in the footer
   brief: Some rights reserved.
-  verbose: >-
-    Except where otherwise noted, the blog posts on this site are licensed
-    under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
+  verbose: >-x
+    The opinions expressed in this blog are my own and do not reflect the views of my employers.
 
 meta: Powered by :PLATFORM with :THEME theme.
 
