@@ -48,7 +48,7 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: Pnm0PY3YOL-pthdEhHEGdODxX07p2QOaHIHT0rzxhIs     # fill in to your verification string
+google_site_verification: Pnm0PY3YOL-pthdEhHEGdODxX07p2QOaHIHT0rzxhIs" />      # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -198,3 +198,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+    
+url: "https://solidshadw.github.io" # the base hostname & protocol for your site
+plugins:
+  - jekyll-sitemap
