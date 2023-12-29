@@ -76,29 +76,29 @@ curl http://cozyhosting.htb/actuator/sessions\?username=kanderson
 
 We got the username from the web service when we go to that same path. I found that using the curl command gave the current active sessions, as they seem to either disconnect for inactivity or it is meant to be switched around. That curl command made sure you got the right one every time.
 
-![image5](/assets/img/20230928144002.png)
+![image5](./20230928144002.png)
 I knew this would come handy eventually, since they looked like cookies. I found that during the login functionality of the application, that can replace the `Cookies` header with "kanderson" cookies. Make sure you change it on `/login` and `/admin`.
 
-![image6](/assets/img/20230928150034.png)
-![image7](/assets/img/20230928145940.png)
+![image6](./20230928150034.png)
+![image7](./20230928145940.png)
 
 I then turned on Intercept in Repeater and sent over the login request, but this time I used the session cookie from kanderson that we discover under `actuator/sessions` and boom we were logged in as kanderson and he looks like he's an admin of the site.
 
-![image8](/assets/img/20230928145918.png)
+![image8](./20230928145918.png)
 
 There was nothing really interesting on this page, other the automatic patching functionality. Which seems to try to connect to other hosts via ssh for patching. 
 It took me a while to figure out, but I was able to find that the "Username" field is vulnerable to command injection.
 I came to that conclusion after not sending anything on the username field, it returned this 302 which forwarded to a weird error message.
 
-![image9](/assets/img/20230928150659.png)
+![image9](./20230928150659.png)
 
 This one was an interesting command injection! I learned about `$IFS` and how you can leverage it as a white [space](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Command%20Injection/README.md#bypass-without-space)character. And we know we need spaces because we received an error.
 
-![image11](/assets/img/20230928161947.png)
+![image11](./20230928161947.png)
 
 After adding the `$IFS`...
 
-![image10](/assets/img/20230928162049.png)
+![image10](./20230928162049.png)
 
 We got a successful command injection! We can now try to get a reverse shell. 
 
@@ -115,7 +115,7 @@ Command explained:
 - Decoded with the command `base64 -d`
 - Last, we piped to bash, to make sure it executes in bash
 
-![image12](/assets/img/20230928162936.png)
+![image12](./20230928162936.png)
 ## User Flag
 
 Once we got that reverse shell, I was running as the user `app`. I couldn't access the /home/josh folder with that user, which I couldn't retrieve the user flag.  I tried LinPeas and found some interesting things but nothing to escalate. Found a postgresql database running.
@@ -136,13 +136,13 @@ And then from my machine, we download
 wget http://cozyhosting.htb:8085/cloudhosting-0.0.1.jar
 ```
 
-![image13](/assets/img/20230928170643.png)
+![image13](./20230928170643.png)
 
 I used this online JAVA [decompiler](https://jdec.app/). Nice an easy or you can also use [jd-gui](http://java-decompiler.github.io/)which can be installed in kali or comes by default.
 
 We found credentials for the postgresql database on the file `BOOT-INF/classes/application.properties`
 
-![image15](/assets/img/20230928171253.png)
+![image15](./20230928171253.png)
 
 Username:
 ```bash
@@ -166,19 +166,19 @@ psql -U postgres -W -h localhost -d cozyhosting
 - `-h`: specifies the hostname of the PostgreSQL server. In this case, it's connecting to the local machine (localhost).
 - `-d `: name of the database (`-d`) to connect to.
 
-![image16](/assets/img/20230928171957.png)
+![image16](./20230928171957.png)
 
 - `\list:`displays a list of all existing database names.
 - `\d`: Lists the database tables.
 
-![image17](/assets/img/20230928172044.png)
+![image17](./20230928172044.png)
 
 Looks like we got a bcrypt hash. 
 ##### Cracking the Hash
 
 Save the hash to a file and then we will be using `hashcat` and the `rockyou` worldlist to crack this hash and get our password.
 
-![iamge19](/assets/img/20230928172440.png)
+![iamge19](./20230928172440.png)
 
 ```bash
 hashcat -a 0 -m 3200 hashAdmin.txt rockyou.txt
@@ -193,7 +193,7 @@ hashcat -a 0 -m 3200 hashAdmin.txt rockyou.txt
 
 I don't have a great GPU, so it took 3 min to crack it. 
 
-![image20](/assets/img/20230928173107.png)
+![image20](./20230928173107.png)
 
 Password: 
 ```bash
@@ -204,14 +204,14 @@ manchesterunited
 This was the Admin password for the postgresql database. The only other user i need to try it on is josh. So, I did and it logged me in as Josh and that is why we don't reuse passwords...
 
 
-![image21](/assets/img/20230928173623.png)
+![image21](./20230928173623.png)
 
 Retrieved the flag on `/home/josh/flag.txt`
 ## Privilege Escalation 
 
 Looks like Josh is able to execute commands as root for ssh.
 
-![image22](/assets/img/20230928173738.png)
+![image22](./20230928173738.png)
 
 This is where [GTFobins](https://gtfobins.github.io/) is my best friend.  A quick search for ssh and we can escalate to root with [ssh](https://gtfobins.github.io/gtfobins/ssh/#sudo)
 
@@ -227,6 +227,6 @@ sudo ssh -o ProxyCommand=';sh 0<&2 1>&2' x
 - `1>&2`: This part of the command is used for output redirection. It redirects file descriptor 1 (standard output) to file descriptor 2 (standard error).
 - `x`: This is the hostname or IP address of the remote server to which you want to establish an SSH connection.
 
-![image23](//assets/img/20230928174031.png)
+![image23](./20230928174031.png)
 
 Like ChatGPT said: `*"Unlocking the digital treasure chest, one 'root' at a time!*"
