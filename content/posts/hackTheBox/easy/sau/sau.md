@@ -60,7 +60,7 @@ You need to add `cozyhosting.htb` to your `/etc/hosts` to be able to see the sit
 
 This is what that web server is serving. Looks like a site for web hosting
 
-![image1](/20230927143831.png)
+![image1](./20230927143831.png)
 #### Directory Enumeration
 
 Running an older tool on it, Dirsearch. I always seem to find interesting things with this tool or what I need usually. 
