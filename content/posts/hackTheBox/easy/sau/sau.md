@@ -72,7 +72,7 @@ By seeing the name `actuator` I knew that it had to do with the Spring Boot Fram
 curl http://cozyhosting.htb/actuator/sessions\?username=kanderson
 ```
 
-![image3](/20230928045306.png)
+![image3](/content/posts/hackTheBox/easy/sau/20230928045306.png)
 
 We got the username from the web service when we go to that same path. I found that using the curl command gave the current active sessions, as they seem to either disconnect for inactivity or it is meant to be switched around. That curl command made sure you got the right one every time.
 
