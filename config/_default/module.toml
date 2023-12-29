@@ -1,0 +1,8 @@
+[[imports]]
+path = "github.com/jpanther/congo/v2"
+
+[module]
+  [[module.imports]]
+    path = "github.com/martignoni/hugo-notice"
+  [[module.imports]]
+    path = "my-theme"
