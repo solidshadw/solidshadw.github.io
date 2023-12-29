@@ -60,19 +60,19 @@ You need to add `cozyhosting.htb` to your `/etc/hosts` to be able to see the sit
 
 This is what that web server is serving. Looks like a site for web hosting
 
-![image1](/assets/img/20230927143831.png)
+![image1](20230927143831.png)
 #### Directory Enumeration
 
 Running an older tool on it, Dirsearch. I always seem to find interesting things with this tool or what I need usually. 
 
-![image2](/assets/img/20230927143927.png)
+![image2](20230927143927.png)
 By seeing the name `actuator` I knew that it had to do with the Spring Boot Framework. Following those paths they had some sensitive data that was redacted, that one that stood out was `/actuator/sessions` as I looked up their [documentation](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#sessions), is indeed active user sessions! We can see then on that site or we can retrieve them by making this get request: 
 
 ```shell
 curl http://cozyhosting.htb/actuator/sessions\?username=kanderson
 ```
 
-![image3](/assets/img/20230928045306.png)
+![image3](20230928045306.png)
 
 We got the username from the web service when we go to that same path. I found that using the curl command gave the current active sessions, as they seem to either disconnect for inactivity or it is meant to be switched around. That curl command made sure you got the right one every time.
 
