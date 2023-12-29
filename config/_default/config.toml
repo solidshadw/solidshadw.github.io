@@ -9,5 +9,7 @@ enableRobotsTXT = true
 paginate = 20
 summaryLength = 0
 
+googleAnalytics = "G-9PVW2NWY1T"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
