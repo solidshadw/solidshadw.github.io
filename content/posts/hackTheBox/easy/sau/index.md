@@ -2,6 +2,8 @@
 title: Hack The Box Machine - CozyHosting
 date: 2023-09-27
 layout: "simple"
+tags: [hackthebox, easy]
+categories: [hackthebox]
 
 ---
 
