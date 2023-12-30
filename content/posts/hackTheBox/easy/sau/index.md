@@ -4,8 +4,8 @@ date: 2023-07-29
 layout: "simple"
 tags: [hackthebox, easy]
 categories: [hackthebox]
-
 ---
+
 ### Easy Box
 
 

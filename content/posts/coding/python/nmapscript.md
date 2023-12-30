@@ -3,7 +3,10 @@ title: "Nmap Python Script"
 summary : "Nmap python script to help automate"
 date: 2023-02-01
 layout: "simple"
+tags: [coding, python, copilot, nmap]
+categories: [coding, python]
 ---
+
 One of my goals lately has being to learn how to program and what better way than to just find something that you can automate/improve and try to code it out. 
 In this case, I wanted to create a nmap script that would do a quick scan mostly to just find out what ports where open, it is like a ping scan but it is full handshake. After it grabs all the open ports, then it will do a more comprehensive scan with the `-sV` argument and the `default` and `safe` nmap scripts. Here is the code I came up with, with some help of Copilot:
 
