@@ -2,6 +2,8 @@
 title: "Web"
 date: 2023-01-26
 layout: "simple"
+tags: [ctf, cyberapocalypse23]
+categories: [ctf]
 ---
 
 ### Passman
