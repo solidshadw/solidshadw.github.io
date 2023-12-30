@@ -20,9 +20,6 @@ categories: [hackthebox]
 
 
 
-
-
-
 ## Port Scan
 I actually wanted to test Naabu as my scanner of choice to be able to enumerate the host. I just Naabu to scan all of the ports and Naabu has a feature to then pump the ports to nmap. This was my command and output.
 
@@ -204,4 +201,3 @@ And then you run:
 And that drops you into a shell. We have made it to root. 
 
 ![image11](./20230729155249.png)
-
