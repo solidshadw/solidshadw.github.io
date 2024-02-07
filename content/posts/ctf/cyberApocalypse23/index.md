@@ -8,7 +8,7 @@ layout: "simple"
 This is what a pretty fun CTF. I will be adding my writeups here and will be dividing them by categories. So far this are ones I have uploded: 
 
 > #### WEB
->- [Passman]()
+>- [Passman](web/passman.md)
 
 > #### REVERSE
->- [Hunting License]()
+>- [Hunting License](reverse/huntinglicense)
