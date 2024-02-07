@@ -25,7 +25,7 @@ categories: [hackthebox]
 Output of my [naabu](https://github.com/projectdiscovery/naabu) scan: 
 
 ```sh
-naabu -host 10.10.11.230 -p - -rate 5000 -nmap-cli "nmap -sV"       30s   192.168.0.187 14:09:44  
+naabu -host 10.10.11.230 -p - -rate 5000 -nmap-cli "nmap -sV"       30s   14:09:44  
   
                  __  
  ___  ___  ___ _/ /  __ __  
