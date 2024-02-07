@@ -71,7 +71,7 @@ fingerprintAlgorithm = "sha256"
   # domain = "llama.yoursite.com"
 
 [plausibleAnalytics]
-  # domain = "solidshadw.me"
+  # domain = "solidshadw.com"
   # event = ""
   # script = ""
 
