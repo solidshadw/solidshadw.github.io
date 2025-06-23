@@ -12,7 +12,7 @@ copyright = "Copy, _right?_ :thinking_face:"
   # mainSections = ["section1", "section2"]
   # description = "My awesome website"
 
-[author]
+[params.author]
   name = "solidshadw"
   # image = "img/author.jpg"
   headline = "I'm only human"
